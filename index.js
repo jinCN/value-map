@@ -38,6 +38,10 @@ class ValueMap extends Map {
   set (key, value) {
     return super.set(guardStringify(key), value)
   }
+
+  get (key) {
+    return super.get(guardStringify(key))
+  }
 }
 
 ValueMap.prototype[Symbol.iterator] = ValueMap.prototype.entries
