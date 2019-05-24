@@ -1,13 +1,5 @@
 const stringify = require('fast-json-stable-stringify')
 
-function guardStringify (key) {
-  if (key && typeof key === 'object') {
-  } else {
-    throw new Error('[value-map] key must be object')
-  }
-  return stringify(key)
-}
-
 class ValueMap extends Map {
   * entries () {
     for (let [k, v] of super.entries()) {
@@ -28,19 +20,19 @@ class ValueMap extends Map {
   }
 
   has (key) {
-    return super.has(guardStringify(key))
+    return super.has(stringify(key))
   }
 
   delete (key) {
-    return super.delete(guardStringify(key))
+    return super.delete(stringify(key))
   }
 
   set (key, value) {
-    return super.set(guardStringify(key), value)
+    return super.set(stringify(key), value)
   }
 
   get (key) {
-    return super.get(guardStringify(key))
+    return super.get(stringify(key))
   }
 }
 

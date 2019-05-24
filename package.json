@@ -1,6 +1,6 @@
 {
   "name": "@superjs/value-map",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "extended ES6 Map using object as key",
   "main": "index.js",
   "engines": {
